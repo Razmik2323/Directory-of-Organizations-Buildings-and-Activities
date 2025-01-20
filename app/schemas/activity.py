@@ -12,5 +12,5 @@ class Activity(ActivityBase):
     """Схема для представления вида деятельности с ID."""
     id: int
 
-    class Config:
-        orm_mode = True
+    class ConfigDict:
+        from_attributes = True

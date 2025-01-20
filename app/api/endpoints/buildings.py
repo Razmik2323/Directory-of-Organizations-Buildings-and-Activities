@@ -15,13 +15,13 @@ def get_db():
         db.close()
 
 
-@router.post("/buildings/", response_model=Building)
+@router.post("/", response_model=Building)
 def create_building(building_data: BuildingCreate, db: Session = Depends(get_db)):
     service = BuildingService(db)
     return service.create_building(building_data)
 
 
-@router.get("/buildings/", response_model=list[Building])
+@router.get("/", response_model=list[Building])
 def list_buildings(db: Session = Depends(get_db)):
     service = BuildingService(db)
     return service.get_all_buildings()

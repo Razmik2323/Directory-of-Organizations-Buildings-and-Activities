@@ -14,5 +14,5 @@ class Building(BuildingBase):
     """Схема для представления здания с ID."""
     id: int
 
-    class Config:
-        orm_mode = True
+    class ConfigDict:
+        from_attributes = True
